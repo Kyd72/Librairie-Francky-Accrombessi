@@ -14,12 +14,12 @@
   <h1>AUGMENTER/DIMINUER QTE LIVRE</h1>
   <div v-if="props.livreSelectionPanel.id!==-999" id="controlPanel">
 
-    <button :disabled="qteLivre+props.livreSelectionPanel.qtestock<0" @click="()=>qteLivre=qteLivre-1" class="submit" id="s1">-</button>
+    <button :disabled="qteLivre+props.livreSelectionPanel.qtestock<=0" @click="()=>qteLivre=qteLivre-1" class="submit" id="s1">-</button>
       <div class="input-container ic2">
         <input id="qteStock" min="prop" step="1" class="input" v-model="qteLivre" type="number" placeholder=" " />
       </div>
       <button @click="()=>qteLivre=qteLivre+1" class="submit" id="s2">+</button>
-    <button :disabled="qteLivre+props.livreSelectionPanel.qtestock<=0" class="submit" @click="handlerClickModifier" id="s3">CONFIRMER</button>
+    <button :disabled="qteLivre+props.livreSelectionPanel.qtestock<0" class="submit" @click="handlerClickModifier" id="s3">CONFIRMER</button>
 
 
   </div>
